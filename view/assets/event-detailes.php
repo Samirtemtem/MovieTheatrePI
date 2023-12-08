@@ -158,7 +158,7 @@ $conn->close();
         <div class="footer-brand-wrapper">
 
             <a href="./index.html" class="logo">
-                <p class="hero-subtitle">ElBay.Tn</p>
+                <p class="hero-subtitle">virtuart</p>
             </a>
 
           <ul class="footer-list">

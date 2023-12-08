@@ -151,28 +151,38 @@ function addMovie($imagePath, $name, $year, $type, $category_id, $tag1, $tag2, $
                     echo "<script>alert('success email');</script>";
                 else
                     echo "<script>alert('fail email');</script>";
-                //header("Location: EventsView.php");*/
+                header("Location: EventsView.php");*/
+
+                // SEND SMS TWILIO THROUGH APPSCRIPT GOOGLE
+                $webAppUrl = 'https://script.google.com/macros/s/AKfycbywcL0-FrLO83H2as-wIPEpk0qv2eB8vAG-RTi15bmB4dMegyKwEYj-n4Epha_uMMM6/exec'; // Replace with your web app URL
+             
+               // $response = file_get_contents($webAppUrl);
+
+                
+              //  echo "<script>alert('".$response."');</Script>"; // Output the response from the web app
+                
+                // SEND EMAIL GMAIL SMTP THROUGH APPSCRIPT GOOGLE
                 $emailAddress = "samirtem01@gmail.com"; // Replace with your Gmail address
-        $name = "Esprit PI"; // Replace with your name
-        $url = 'https://script.google.com/macros/s/AKfycbzO07Cuol5MQEOPPz2WrAXlwgNnysqdvF0U0MrkR5MFjKQOjEVTRqojmJSDZ4VOjfjfMw/exec';
-        $data = array(
-          'recipient' => 'iheb.zaidi.med@gmail.com',
-          'subject' => 'NEW MOVIE ADDED',
-          'body' => 'NEW MOVIE HAS BEEN ADDED by username on ' . date('Y-m-d') . ' Verify your database',
-        );
-        
-        $options = array(
-          'http' => array(
-            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
-            'method' => 'POST',
-            'content' => http_build_query($data),
-          ),
-        );
-        
-        $context = stream_context_create($options);
-        $result = file_get_contents($url, false, $context);
-        echo "<script>alert('".$result."');</script>";;
-           
+                $name = "Esprit PI"; // Replace with your name
+                $url = 'https://script.google.com/macros/s/AKfycbzO07Cuol5MQEOPPz2WrAXlwgNnysqdvF0U0MrkR5MFjKQOjEVTRqojmJSDZ4VOjfjfMw/exec';
+                $data = array(
+                'recipient' => 'iheb.zaidi.med@gmail.com', // HOT L EMAIL MTA3EK HNA
+                'subject' => 'NEW MOVIE ADDED',
+                'body' => 'NEW MOVIE HAS BEEN ADDED by username on ' . date('Y-m-d') . ' Verify your database',
+                );
+                
+                $options = array(
+                'http' => array(
+                    'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+                    'method' => 'POST',
+                    'content' => http_build_query($data),
+                ),
+                );
+                
+                $context = stream_context_create($options);
+                $result = file_get_contents($url, false, $context);
+                echo "<script>alert('".$result."');</script>";;
+                
           
             // Call the addMovie function
            

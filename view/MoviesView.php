@@ -93,6 +93,8 @@
                 </div>
                 <?php 
                 session_start();
+                error_reporting(E_ERROR | E_WARNING);
+
                 if (isset($_SESSION['username']))
                 {
                     echo '<a href="./EventsView.php">
@@ -250,7 +252,7 @@ include('./assets/eventcard.php');
             <?php
 include_once '../controller/MoviesC.php';
 // Fetch the results
-$movieC=new MoviesController();
+$movieC=new MoviesC();
 $result = $movieC->getMoviesWithMinRating(4);
 
 ?>

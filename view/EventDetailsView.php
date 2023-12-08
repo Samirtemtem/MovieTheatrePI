@@ -12,6 +12,8 @@ $ratings = $RC->getMovieRatings($movieId);
 $m= new MoviesC();
 $result = $m->getMovieDetailsById($movieId);
 session_start();
+error_reporting(E_ERROR | E_WARNING);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $movieId = $_GET['id'];  // Add the input name attribute for the movie ID if not present
     $comment = $_POST["comment"];
@@ -400,7 +402,7 @@ if (!empty($ratings)) {
         <div class="footer-brand-wrapper">
 
             <a href="./index.html" class="logo">
-                <p class="hero-subtitle">ElBay.Tn</p>
+                <p class="hero-subtitle">virtuart</p>
             </a>
 
           <ul class="footer-list">

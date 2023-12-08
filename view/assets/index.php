@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ElBay.tn - Best Art collection</title>
+    <title>virtuart - Best Art collection</title>
 
     <!--
       - favicon
@@ -329,7 +329,7 @@ include('./assets/eventcard.php');
         <div class="footer-brand-wrapper">
 
             <a href="./index.html" class="logo">
-                <p class="hero-subtitle">ElBay.Tn</p>
+                <p class="hero-subtitle">virtuart</p>
             </a>
 
           <ul class="footer-list">

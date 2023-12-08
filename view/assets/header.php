@@ -4,7 +4,7 @@
       <div class="overlay" data-overlay></div>
 
       <a href="./index.php" class="logo">
-          <p class="hero-subtitle">ElBay.Tn</p>
+          <p class="hero-subtitle">virtuart</p>
       </a>
 
       <div class="header-actions">
@@ -54,7 +54,7 @@
         <div class="navbar-top">
 
             <a href="./index.php" class="logo">
-                <p class="hero-subtitle">ElBay.Tn</p>
+                <p class="hero-subtitle">virtuart</p>
             </a>
 
           <button class="menu-close-btn" data-menu-close-btn>
