@@ -155,7 +155,7 @@ button[type="submit"]:hover {
         for ($r = 0; $r < (5 - $row["rate"]); $r++) {
             echo '<i class="far fa-star"></i>';
         }
-        echo '<span>' . $row["rate"] . '/5</span>';
+        echo '<p class="detail-subtitle">' . $row["rate"] . '/5</p>';
     
         echo '</div>';
                 echo '<p class="detail-subtitle">Tags: ' . $row["tag1"] . ', ' . $row["tag2"] . ', ' . $row["tag3"] . '</p>';
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </style>
                 <?php
-                if(isset($_SESSION))
+                if(isset($_SESSION['username']))
                 {
                 $role=$_SESSION['role'];
                 
