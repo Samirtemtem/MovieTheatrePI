@@ -15,6 +15,28 @@ class CategoryC
         $categories = $categoryStmt->fetchAll(PDO::FETCH_ASSOC);
         return $categories;
     }
+    public function deleteCategory($categoryId)
+    {
+        // Use prepared statements to prevent SQL injection
+        $sql = "DELETE FROM categories WHERE id = :category_id";
+
+        // Prepare the statement
+        $stmt = $this->pdo->prepare($sql);
+
+        // Bind the parameter
+        $stmt->bindParam(':category_id', $categoryId, PDO::PARAM_INT);
+
+        try {
+            // Execute the query
+            $stmt->execute();
+
+            // Return true if the deletion was successful
+            return true;
+        } catch (PDOException $e) {
+            // Handle the exception (log, rethrow, etc.)
+            throw new Exception("Error deleting category: " . $e->getMessage());
+        }
+    }
     public function getMoviesWithCategories()
     {
         // Fetch categories
@@ -60,5 +82,27 @@ class CategoryC
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $result;
+    }
+    public function createCategory($categoryName)
+    {
+        // Use prepared statements to prevent SQL injection
+        $sql = "INSERT INTO categories (name) VALUES (:category_name)";
+
+        // Prepare the statement
+        $stmt = $this->pdo->prepare($sql);
+
+        // Bind the parameter
+        $stmt->bindParam(':category_name', $categoryName, PDO::PARAM_STR);
+
+        try {
+            // Execute the query
+            $stmt->execute();
+
+            // Return the ID of the newly inserted category
+            return $this->pdo->lastInsertId();
+        } catch (PDOException $e) {
+            // Handle the exception (log, rethrow, etc.)
+            throw new Exception("Error creating category: " . $e->getMessage());
+        }
     }
 }

@@ -30,7 +30,7 @@ class RatingC
             // Execute the statement
             $stmt->execute();
             echo "<script>alert('Review added successfully!');</script>";
-            header("location: .");
+            header("Refresh: 0; URL=EventDetailsView.php?id=".$movieId);
 
         } catch (PDOException $e) {
             // Handle exceptions or log errors

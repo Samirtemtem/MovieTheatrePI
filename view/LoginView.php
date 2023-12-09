@@ -1,6 +1,8 @@
 
 <?php
 session_start();
+error_reporting(E_ERROR | E_WARNING);
+
 include '../config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

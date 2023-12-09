@@ -1,2 +1,2 @@
 <?php 
-Header("location: LoginView.php");
+Header("location: MoviesView.php");

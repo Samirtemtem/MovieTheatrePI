@@ -30,12 +30,12 @@
                 error_reporting(E_ERROR | E_WARNING);
 
         session_start();
-
+        if (isset($_SESSION["username"])) {
         echo '<a href="#" class="navbar-link ">';
         echo $_SESSION['username']." ";
         echo '<i class="fas fa-user-circle"></i>'; // Font Awesome user-circle icon
 
-        echo '</a>';if (isset($_SESSION["username"])) {
+        echo '</a>';
     echo '<a href="./assets/signout.php" class="btn btn-primary">Sign out</a>';
 } else {
     echo '<a href="./LoginView.php" class="btn btn-primary">Sign in</a>';

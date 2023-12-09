@@ -1,6 +1,8 @@
 
 <?php
 session_start();
+error_reporting(E_ERROR | E_WARNING);
+
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
